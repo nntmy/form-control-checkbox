@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+	<label *ngFor="let checkbox of checklistState" class="checkbox-control">
+    <input type="checkbox" (change)="onChecklistChange($event.target.checked, checkbox)" [checked]="checkbox.checked" [value]="checkbox.value" /> {{ checkbox.label }}
+  </label>
+</form>
+<button type="submit" class="btn btn-primary" (click)="onSubmit()">Save</button>
+<h1>Control Value:</h1>
+
+<strong>checklist.value</strong>
+: {{ checklist.value | json }}
+
+
+<br>
+<h1>Form Value:</h1>
+
+{{ form.value | json }}
